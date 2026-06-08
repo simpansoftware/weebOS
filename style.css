@@ -1,0 +1,73 @@
+body {
+    font-family: Noto Sans, sans-serif;
+    background-image: url(astolfo.jpeg);
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.topbarmango {
+    margin-left: 16px; 
+    margin-right: auto;
+}
+
+.topbarwelcome {
+    cursor: pointer;
+    margin-left: 16px;
+    margin-right: auto;
+}
+
+.taim {
+    margin-right: 16px;
+}
+
+.welcome {
+    border: 2px solid;
+    background-color: white;
+    border-color: rebeccapurple;
+    width: 256px;
+    padding: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.welcomeheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+.welcomeclose {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    margin-right: 8px;
+    border-radius: 8px;
+}
+
+.weebOS {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.mangoimage {
+    max-height: 64px;
+    max-width: 64px;
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+}

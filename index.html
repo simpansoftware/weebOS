@@ -4,20 +4,20 @@
         <title>weebOS</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body style="font-family: Noto Sans, sans-serif; background-image: url(astolfo.jpeg); background-size: cover; height: 100vh;">
-        <div style="display: flex; justify-content: space-between; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.25); color: #fff; border-radius: 10px; height: 50px;">
+    <body>
+        <div class="topbar">
             <p style="margin-left: 16px;">weebOS</p>
-            <img src="mango.jpg" alt="mango" style="margin-left: 16px; margin-right: auto;">
-            <p style="cursor: pointer; margin-left: 16px; margin-right: auto;" id="welcomeopen">Welcome</p>
-            <p id="taim" style="margin-right: 16px;">taim</p>
+            <img src="mango.jpg" alt="mango" class="topbarmango">
+            <p class="topbarwelcome">Welcome</p>
+            <p id="taim" class="taim">taim</p>
         </div>
-        <div id="welcome" style="border: 2px solid; background-color: white; border-color: rebeccapurple; width: 256px; padding: 8px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-            <div id="welcomeheader" style="display: flex; justify-content: space-between; align-items: center; cursor: move;">
+        <div id="welcome" class="welcome">
+            <div id="welcomeheader" class="welcomeheader">
                 <span>Welcome</span>
-                <span id="welcomeclose" style="cursor: pointer; width: 16px; height: 16px; background-color: red; margin-right: 8px; border-radius: 8px;"></span>
+                <span id="welcomeclose" class="welcomeclose"></span>
             </div>
-            <h1 style="margin-bottom: 8px; margin-top: 8px;">weebOS</h1>
-            <img src="mango.jpg" style="max-height: 64px; max-width: 64px; height: auto; width: auto; border-radius: 8px;"><br>
+            <h1 class="weebOS">weebOS</h1>
+            <img src="mango.jpg" class="mangoimage"><br>
             <a href="https://simpansoftware.cc">my REAL webpage</a>
         </div>
         <script src="main.js"></script>
