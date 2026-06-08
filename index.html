@@ -5,17 +5,20 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="topbar">
-            <div class="left"></div>
+        <div class="topbar" id="top">
             <p class="title">weebOS</p>
             <img src="mango.jpg" alt="mango" class="topbarmango">
-            <p class="topbarwelcome">Welcome</p>
             <p id="taim" class="taim">taim</p>
         </div>
         <div id="desktopApps" class="desktopApps">
-            <div class="somedivcalledsteve">
+            <div class="somedivcalledsteve" id="proxyopen">
                 <img src="noname.png" class="noname" alt="">
                 <p style="margin: 0px; margin-left: 9px;">proxy</p>
+            </div>
+            <br>
+            <div class="somedivcalledsteve" id="welcomeopen">
+                <img src="mango.jpg" class="noname" alt="">
+                <p style="margin: 0px; margin-left: -2px;">Welcome</p>
             </div>
         </div>
         <div id="welcome" class="welcome">
@@ -26,6 +29,13 @@
             <h1 class="weebOS">weebOS</h1>
             <img src="mango.jpg" class="mangoimage"><br>
             <a href="https://simpansoftware.cc">my REAL webpage</a>
+        </div>
+        <div id="proxy" class="proxy">
+            <div id="proxyheader" class="welcomeheader">
+                <span>proxy</span>
+                <span id="proxyclose" class="welcomeclose"></span>
+            </div>
+            <iframe src="https://proxy.4lvaret.tech" frameborder="0"></iframe>
         </div>
         <script src="main.js"></script>
     </body>

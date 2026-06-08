@@ -8,6 +8,7 @@ setInterval(taim, 1000);
 
 // Make the DIV element draggable:
 donkeydragElement(document.getElementById("welcome"));
+donkeydragElement(document.getElementById("proxy"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function donkeydragElement(element) {
@@ -50,8 +51,18 @@ function donkeydragElement(element) {
     initialX = e.clientX;
     initialY = e.clientY;
     // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
-    element.style.top = (element.offsetTop - currentY) + "px";
-    element.style.left = (element.offsetLeft - currentX) + "px";
+    //the segment below is coded by ai, but thats it
+    let newTop = element.offsetTop - currentY;
+    let newLeft = element.offsetLeft - currentX;
+
+    const maxX = window.innerWidth - element.offsetWidth;
+    const maxY = window.innerHeight - element.offsetHeight;
+
+    newLeft = Math.max(0, Math.min(newLeft, maxX));
+    newTop = Math.max(0, Math.min(newTop, maxY));
+
+    element.style.left = newLeft + "px";
+    element.style.top = newTop + "px";
   }
 
   // Step 12: Define the `stopDragging` function to stop tracking mouse movement by removing the event listeners.
@@ -63,17 +74,26 @@ function donkeydragElement(element) {
 
 let welcome = document.querySelector("#welcome")
 
+let proxy = document.querySelector("#proxy");
+
 function closeWindow(element) {
   element.style.display = "none"
 }
 
 function openWindow(element) {
   element.style.display = "block";
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
 }
 
 let welcomeClose = document.querySelector("#welcomeclose")
 
 let welcomeOpen = document.querySelector("#welcomeopen")
+
+let proxyClose = document.querySelector("#proxyclose")
+
+let proxyOpen = document.querySelector("#proxyopen")
 
 welcomeClose.addEventListener("click", function() {
   closeWindow(welcome);
@@ -82,3 +102,31 @@ welcomeClose.addEventListener("click", function() {
 welcomeOpen.addEventListener("click", function() {
   openWindow(welcome);
 });
+
+proxyClose.addEventListener("click", function() {
+  closeWindow(proxy);
+});
+
+proxyOpen.addEventListener("click", function() {
+  openWindow(proxy);
+});
+
+let biggestIndex = 1;
+
+let topBar = document.querySelector("#top")
+
+function handleWindowTap(element) {
+  biggestIndex++;
+  element.style.zIndex = biggestIndex;
+  topBar.style.zIndex = biggestIndex + 1;
+  deselectIcon(selectedIcon)
+}
+
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () =>
+    handleWindowTap(element)
+  )
+}
+
+addWindowTapHandling(welcome);
+addWindowTapHandling(proxy);
