@@ -63,6 +63,7 @@ function donkeydragElement(element) {
 
     element.style.left = newLeft + "px";
     element.style.top = newTop + "px";
+    // ai coding is stopped here
   }
 
   // Step 12: Define the `stopDragging` function to stop tracking mouse movement by removing the event listeners.
